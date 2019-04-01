@@ -12,4 +12,6 @@ int no_main() {
     double dKilometers = dMiles * 1.60394;
 
     printf("%.1f miles is equal to %.4f3 kilometers", dMiles, dKilometers);
+
+    return 0;
 }
