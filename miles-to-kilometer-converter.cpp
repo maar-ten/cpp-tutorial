@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 
-int no_main() {
+int main() {
     std::string sQuestion("How many miles?\n");
     std::string sMiles;
 

@@ -3,5 +3,5 @@ project(cpp_tutorial)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(cpp_tutorial birthdays.cpp miles-to-kilometer-converter.cpp)
+add_executable(cpp_tutorial class.cpp)
 
