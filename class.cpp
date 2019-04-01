@@ -32,7 +32,7 @@ public:
         return block;
     }
 
-    void absorbAttach(double damage) {
+    void absorbAttack(double damage) {
         this->health = this->health - (damage - this->block);
     }
 };
@@ -44,19 +44,19 @@ public:
         do {
             int offenderIndex = std::rand() % 2; // either 0 or 1
 
-            Warrior offender = offenderIndex == 0 ? warrior1 : warrior2;
-            Warrior defender = offenderIndex == 0 ? warrior2 : warrior1;
+            Warrior *offender = offenderIndex == 0 ? &warrior1 : &warrior2;
+            Warrior *defender = offenderIndex == 0 ? &warrior2 : &warrior1;
 
-            double strikeDamage = offender.getDamage() - defender.getBlock();
+            double strikeDamage = offender->getDamage() - defender->getBlock();
 
-            std::cout << offender.getName() << " attacks " << defender.getName() <<
+            std::cout << offender->getName() << " attacks " << defender->getName() <<
                       " and deals " << strikeDamage << " damage\n";
 
-            defender.absorbAttach(offender.getDamage());
-            std::cout << defender.getName() << " is down to " << defender.getHealth() << " health\n";
+            defender->absorbAttack(offender->getDamage());
+            std::cout << defender->getName() << " is down to " << defender->getHealth() << " health\n";
 
-            if (defender.getHealth() <= 0) {
-                std::cout << defender.getName() << " has died and " << offender.getName() << " is victorious\n";
+            if (defender->getHealth() <= 0) {
+                std::cout << defender->getName() << " has died and " << offender->getName() << " is victorious\n";
                 break;
             }
         } while (true);
