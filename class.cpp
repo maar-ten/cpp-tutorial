@@ -40,12 +40,12 @@ public:
 class Battle {
 
 public:
-    static void StartFight(Warrior warrior1, Warrior warrior2) {
+    static void StartFight(Warrior *warrior1, Warrior *warrior2) {
         while (true) {
             int offenderIndex = std::rand() % 2; // either 0 or 1
 
-            Warrior *offender = offenderIndex == 0 ? &warrior1 : &warrior2;
-            Warrior *defender = offenderIndex == 0 ? &warrior2 : &warrior1;
+            Warrior *offender = offenderIndex == 0 ? warrior1 : warrior2;
+            Warrior *defender = offenderIndex == 0 ? warrior2 : warrior1;
 
             double strikeDamage = offender->getDamage() - defender->getBlock();
 
@@ -59,7 +59,7 @@ public:
                 std::cout << defender->getName() << " has died and " << offender->getName() << " is victorious\n";
                 break;
             }
-        };
+        }
     }
 };
 
@@ -69,7 +69,7 @@ int main() {
     Warrior thor("Thor", 100, 30, 15);
     Warrior hulk("Hulk", 135, 25, 10);
 
-    Battle::StartFight(thor, hulk);
+    Battle::StartFight(&thor, &hulk);
 
     return 0;
 }
