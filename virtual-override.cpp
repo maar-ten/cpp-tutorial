@@ -11,8 +11,6 @@ public:
 
 class Bottom : public Top {
 public:
-    Bottom()= default;
-
     void print() override {
         std::cout << "I'm bottom!\n";
     }
@@ -28,7 +26,7 @@ void callPrint(Top &top){
 
 int main() {
 
-    Bottom bottom = Bottom();
+    Bottom bottom;
     callPrint(bottom);
 
     return 0;
