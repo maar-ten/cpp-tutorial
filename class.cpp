@@ -40,8 +40,8 @@ public:
 class Battle {
 
 public:
-    static void StartFight(Warrior &warrior1, Warrior &warrior2) {
-        do {
+    static void StartFight(Warrior warrior1, Warrior warrior2) {
+        while (true) {
             int offenderIndex = std::rand() % 2; // either 0 or 1
 
             Warrior *offender = offenderIndex == 0 ? &warrior1 : &warrior2;
@@ -59,7 +59,7 @@ public:
                 std::cout << defender->getName() << " has died and " << offender->getName() << " is victorious\n";
                 break;
             }
-        } while (true);
+        };
     }
 };
 
