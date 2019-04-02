@@ -33,7 +33,7 @@ public:
     }
 
     void absorbAttack(double damage) {
-        this->health = this->health - (damage - this->block);
+        health -= damage - block;
     }
 };
 

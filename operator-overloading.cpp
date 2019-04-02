@@ -12,9 +12,9 @@ public:
 
     Box operator+(const Box &box) {
         Box boxSum{};
-        boxSum.length = this->length + box.length;
-        boxSum.height = this->height + box.height;
-        boxSum.breadth = this->breadth + box.breadth;
+        boxSum.length = length + box.length;
+        boxSum.height = height + box.height;
+        boxSum.breadth = breadth + box.breadth;
         return boxSum;
     };
 };
