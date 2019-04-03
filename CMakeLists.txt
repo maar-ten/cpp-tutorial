@@ -3,5 +3,5 @@ project(cpp_tutorial)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(cpp_tutorial class.cpp)
+add_executable(cpp_tutorial function-reference.cpp)
 
