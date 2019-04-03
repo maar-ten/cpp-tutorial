@@ -7,7 +7,8 @@ bool isOdd(int num){
 }
 
 std::vector<int> filterValues(const std::vector<int>& list, const std::function<bool(int)>& filter){
-    std::vector<int> filteredValues(0);
+    std::vector<int> filteredValues;
+
     for (int num: list) {
         if (filter(num)) {
             filteredValues.push_back(num);
@@ -17,11 +18,7 @@ std::vector<int> filterValues(const std::vector<int>& list, const std::function<
 }
 
 int main() {
-    std::vector<int> myList(4);
-    myList.push_back(6);
-    myList.push_back(7);
-    myList.push_back(8);
-    myList.push_back(9);
+    std::vector<int> myList {6, 7, 8, 9};
 
     std::vector<int> oddList = filterValues(myList, isOdd);
 
